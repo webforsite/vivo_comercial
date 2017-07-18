@@ -1,0 +1,43 @@
+<html>
+<head>
+<title></title>
+<style>
+        td{
+            font-family: Verdana;
+            font-size: x-small;
+        }
+</style>
+<script>
+	var janela;
+	function Logar(){
+		janela = window.open("https://netsales.netservicos.com.br/NETSales/index.do");
+		
+		setTimeout(function(){ LogarSales(); }, 1000);
+	}
+	
+	function LogarSales(){
+		var login = document.getElementById('login').value;
+		var senha = document.getElementById('senha').value;
+		janela.close();
+		window.location.href = 'https://netsales.netservicos.com.br/NETSales/j_security_check?dbService=&j_captcha_input=73nn5w&j_username=' + login + '&j_password=' + senha;
+	}
+</script>
+
+</head>
+<body>
+	<table style="width:00px" border="0">
+		<tr>
+			<td>Login:</td>
+			<td><input type="text" id="login"></td>
+		</tr>
+		<tr>
+			<td>Senha:</td>
+			<td><input type="text" id="senha"></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td align="center"><input type="button" value="entrar" onclick="Logar();"></td>
+		</tr>
+	</table>
+</body>
+</html>
